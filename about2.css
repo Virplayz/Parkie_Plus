@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  #company-info {
+    background-color: #f4f4f4;
+  }
+  
+  #features {
+    background-color: #e6e6e6;
+  }
+  
+  .feature {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #team {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .member {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .member img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  footer{
+    height: 30vh;
+    width: 100vw;
+    background-color: rgb(208, 216, 219);
+    filter: drop-shadow(18px 18px 120px black);
+}
+#background{
+    
+
+}
+.an{
+    display: flex;
+    flex-direction: column;
+    transform: translate(50%,25px);
+    margin-top: 0px;
+    line-height: 10px;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.an:hover{
+    color: goldenrod;
+    transition: 0.5s;
+}
+.an a{
+    text-decoration: none;
+    color: black;
+}
+#home .an a {
+    color: black;
+}
+#footer-tit h1{
+    margin-left: 11vw;
+}
+#footer-tit {
+    font-weight: 100;
+    color: rgb(74, 171, 210);
+    font-size: 45px;
+   transform: translate(50px, 19px);
+   
+}
+#contact{
+    font-weight: 100;
+    margin-top: 10px;
+    transform: translate(50px, 39px);
+}
+#quick h2{
+    font-weight: 100;
+    font-size: 50px;
+    text-decoration: none;
+
+}
+#quick{
+    transform: translate(50%, 15px);
+    margin-top: -90px;
+    font-weight: 100;
+    
+    font-size: 38px;
+}
+#copy{
+    transform: translate(480px, 60px);
+}
+
+
+  

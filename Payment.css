@@ -1,0 +1,128 @@
+/* 🌆 Background and base layout */
+body {
+  background-image: url("coffee_background.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* 🧭 Navigation bar */
+nav {
+  height: 12vh;
+  width: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0 3vw;
+  box-sizing: border-box;
+}
+
+#parkie {
+  font-size: 30px;
+  font-weight: 100;
+  color: rgb(61, 141, 173);
+  flex-shrink: 0;
+}
+
+#nav-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5vw;
+  flex-wrap: wrap;
+}
+
+#nav-part2 h4 a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 8px 12px;
+  transition: color 0.5s;
+}
+
+#nav-part2 h4 a:hover {
+  color: rgb(61, 141, 173);
+}
+
+/* 🧩 Main container */
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  margin: 15vh auto 5vh; /* centers below nav */
+}
+
+/* 🎛️ Buttons */
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #DAA521;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #b8860b;
+}
+
+/* 📱 QR Code */
+.qr-code-container {
+  margin: 20px 0;
+}
+
+.qr-code-container img {
+  max-width: 200px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* 📲 Responsive design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #nav-part2 {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #nav-part2 h4 a {
+    font-size: 16px;
+    padding: 6px 0;
+  }
+
+  .container {
+    width: 95%;
+    padding: 25px 15px;
+    margin-top: 14vh;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .qr-code-container img {
+    width: 180px;
+  }
+}

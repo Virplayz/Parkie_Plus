@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0; /* Set a background color for the body */
+}
+
+.form {
+    width: 500px;
+    background-color: #eeeeee;
+    padding: 30px; /* Increased padding for better spacing */
+    display: grid;
+    gap: 20px;
+    border-radius: 10px; /* Add some border radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+input {
+    width: 100%;
+    padding: 12px; /* Increased padding for better input appearance */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Remove default input focus outline */
+}
+
+.otpverify {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px;
+    background-color: #DAA521; /* Gold color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b88f18; /* Darker gold color on hover */
+}

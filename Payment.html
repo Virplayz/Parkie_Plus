@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Availability & Payment</title>
+  <link rel="stylesheet" href="Payment.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <nav>
+    <h1 id="parkie">PARKIE</h1>
+    <div id="nav-part2">
+      <h4><a href="home.html">Home</a></h4>
+      <h4><a href="about2.0.html">About Us</a></h4>
+      <h4><a href="about.html">Add Parking</a></h4>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Check Availability & Confirm Payment</h1>
+    <input type="email" id="email" placeholder="Enter your email">
+    
+    <button class="availability-button" onclick="handleButtonClick('availability')">Check Availability</button>
+    
+    <div class="qr-code-container">
+      <img src="kutal_qr.png" alt="QR Code for Payment">
+    </div>
+    
+    <button class="payment-button" onclick="handleButtonClick('payment')">Confirm Payment</button>
+    
+    <p id="status"></p>
+  </div>
+
+  <script>
+    // Initialize EmailJS with your public key
+    const EMAILJS_SERVICE_ID  = "service_8jkq77p";
+    const EMAILJS_TEMPLATE_ID = "template_e3d5yao";
+    const EMAILJS_PUBLIC_KEY  = "lgDrWaSIJ2fWQTgsr";
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    function sendEmail(emailValue, subject, bodyContent) {
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        email: emailValue,   // maps to {{email}} in template
+        subject: subject,    // maps to {{subject}} in template
+        message: bodyContent // maps to {{message}} in template
+      })
+      .then(() => {
+        const status = document.getElementById('status');
+        status.textContent = "✅ Email sent successfully!";
+        status.style.color = "green";
+      })
+      .catch((error) => {
+        const status = document.getElementById('status');
+        status.textContent = "❌ Failed to send email.";
+        status.style.color = "red";
+        console.error("EmailJS error:", error);
+      });
+    }
+
+    function handleButtonClick(type) {
+      const emailInput = document.getElementById('email').value.trim();
+      const status = document.getElementById('status');
+
+      if (!emailInput) {
+        status.textContent = "⚠️ Please enter a valid email address.";
+        status.style.color = "orange";
+        return;
+      }
+
+      let subject, bodyContent;
+      if (type === 'availability') {
+        subject = "Availability Check";
+        bodyContent = `User (${emailInput}) is requesting parking availability.`;
+      } else if (type === 'payment') {
+        subject = "Payment Confirmation";
+        bodyContent = `User (${emailInput}) has completed payment. Please verify and contact.`;
+      }
+
+      sendEmail(emailInput, subject, bodyContent);
+    }
+  </script>
+</body>
+</html>

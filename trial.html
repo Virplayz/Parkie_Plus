@@ -1,0 +1,53 @@
+/*<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Policy</title>
+<style>
+    /* CSS for styling */
+    .container {
+        margin: 50px auto;
+        width: 80%;
+    }
+    #nextButton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    #nextButton:hover {
+        opacity: 1;
+    }
+    #nextButton:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Terms and Policy</h2>
+   
+        <input type="checkbox" id="agreeCheckbox">
+        I agree to the terms and policy
+    </label>
+    <button id="nextButton" disabled>Next</button>
+</div>
+
+<script>
+    // JavaScript to enable/disable the next button based on checkbox status
+    document.getElementById("agreeCheckbox").addEventListener("change", function() {
+        var nextButton = document.getElementById("nextButton");
+        if (this.checked) {
+            nextButton.disabled = false;
+        } else {
+            nextButton.disabled = true;
+        }
+    });
+</script>
+</body>
+</html>

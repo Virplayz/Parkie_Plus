@@ -1,0 +1,72 @@
+nav{
+    height: 12vh;
+    width: 100vw;
+    background-color: whitesmoke;
+    filter: blur(px);
+    filter: drop-shadow(18px 18px 12px );
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    z-index: 999;
+}
+
+#parkie{
+    font-weight: 100;
+    color: rgb(61, 141, 173);
+    font-size: 30px;
+    margin-left: 50px;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    list-style: none;
+    
+}
+#nav-part2 h4 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    padding: 10px 20px;
+    font-size: 18px;
+   
+}
+#rules_container{
+    height: 70vh;
+    margin-top: -50px;
+    width: 100vw;
+    background-image: url("parkie_rules.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ #rules_title{
+   transform: translate(85%,120%);
+   width: 450px;
+   font-size: 52px;
+   text-align: center;
+    color: white;
+    border-bottom: 3.2px solid black;
+    font-weight: 100;
+}
+.container {
+    margin: 50px auto;
+    width: 80%;
+}
+.nextButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+#nextButton:hover {
+    opacity: 1;
+}
+#nextButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

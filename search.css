@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    
+
+}
+html,body{
+    height: 100%;
+    width: 100%; 
+    overflow-x: hidden;   
+}
+
+/* NavBar */
+nav{
+    height: 12vh;
+    width: 100%;
+    background-color: whitesmoke;
+    filter: drop-shadow(18px 18px 12px );
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 999;
+}
+#parkie{
+    font-weight: 100;
+    color: rgb(61, 141, 173);
+    font-size: 30px;
+    margin-left: 50px;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    list-style: none;
+    
+}
+#nav-part2 h4 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    padding: 10px 20px;
+    font-size: 18px;
+   
+}
+
+
+
+
+
+#boxes{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    scale: 1;
+}
+
+.box {
+    width: 15vw;
+    height: 80px;
+    
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 2px dashed goldenrod;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    line-height: 65px;
+    transition: 0.5s;
+}
+.box:hover{
+    background-color: goldenrod;
+    transition: 0.5s
+}
+#boxes {
+    margin-top: 10px;
+    height: 65vh;
+    width: 32vw;
+    background-color: ;
+    margin-left: 60%;
+   
+}
+#boxes a{
+    text-decoration: none;
+    color: black;
+}
+#searchInput{
+    margin-top:35px;
+    margin-left: 58%;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+#box1{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin-top: -20px;
+    width: 75px;
+    background-color: goldenrod;
+    padding: 2px;
+    border-radius: 10px;
+    margin-left: 35%;
+}
+#LaxmiRoad a{
+    text-decoration: none;
+    color: black;
+}
+#div{
+    height: 70vh;
+    width: 52.5vw;
+    background-image: url("search_img.png");
+    margin-top: -560px;
+    background-repeat: no-repeat;
+  
+    background-size: contain;
+    
+    margin-left: 20px;
+    
+}
+img{
+    height: 20vh;
+    margin-top: 110px;
+    margin-left: 850px;
+}
+#MangalwarPeth a{
+    text-decoration: none;
+    color: black;
+}

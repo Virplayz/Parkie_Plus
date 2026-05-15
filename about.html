@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div id="main">
+        <div class="center">
+            <h1>Become our Member</h1>
+            <form method="post" id="mainForm">
+                <div class="text_field">
+                    <input type="text" id="parkingName" required style="color:rgb(0, 0, 0)" placeholder="Parking Name">
+                    <span></span>
+      
+                </div>
+                <div class="text_field">
+                    <input type="text" id="location" required style="color:rgb(0, 0, 0)" placeholder="Location">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="number" id="ticketPrice" required style="color:black"  placeholder="Ticket Price">
+                    <span></span>
+            
+                </div>
+                <div class="text_field">
+                    <input type="text" id="pinCodeAddress" required style="color:black"  placeholder="Pin Code Address">
+                    <span></span>
+                    
+                </div>
+                <div class="text_field">
+                    <input type="text" id="yourName" required style="color:black"  placeholder="Your Name">
+                    <span></span>
+
+                </div>
+                <div class="text_field">
+                    <input type="email" id="email" required style="color:black"  placeholder="Eamil Id">
+                    <span></span>
+                
+                </div>
+                <div class="text_field">
+                    <input type="text" id="phoneNo" required style="color:black"  placeholder="Phone No">
+                    <span></span>
+                    
+                </div>
+                <input type="submit" value="Sign-in" id="loggg">
+                <a href="deva.html" href="deva.css" id="bak">Back</a>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+         import {  getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+         const firebaseConfig = {
+            apiKey: "AIzaSyAmwP09kE7xoibi0tJLvrDX-GEmx1JntN4",
+            authDomain: "parking-system-3bc50.firebaseapp.com",
+            databaseURL: "https://parking-system-3bc50-default-rtdb.firebaseio.com",
+            projectId: "parking-system-3bc50",
+            storageBucket: "parking-system-3bc50.appspot.com",
+            messagingSenderId: "671191659676",
+            appId: "1:671191659676:web:317e696c77e8f55f0fe959",
+            measurementId: "G-276RVTDFB9"`
+         
+        };
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const mainDB = ref(database, 'main');
+
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            submitForm(e);
+        });
+
+        function submitForm(e) {
+            e.preventDefault();
+            var parkingName = document.getElementById('parkingName').value;
+            var location = document.getElementById('location').value;
+            var ticketPrice = document.getElementById('ticketPrice').value;
+            var pinCodeAddress = document.getElementById('pinCodeAddress').value;
+            var yourName = document.getElementById('yourName').value;
+            var email = document.getElementById('email').value;
+            var phoneNo = document.getElementById('phoneNo').value;
+
+            console.log('Values before saving:', parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo);
+
+            saveMessages(parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo);
+        }
+
+        const saveMessages = (parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo) => {
+            var main = push(mainDB);
+
+            set(main, {
+                Parking_Name: parkingName,
+                Location: location,
+                Ticket_Price: ticketPrice,
+                Pin_Code_Address: pinCodeAddress,
+                Name: yourName,
+                Email_address: email,
+                Phone_no: phoneNo,
+                Date_of_booking: new Date().toISOString() // assuming booking date is current date/time
+            });
+
+            console.log('Data saved successfully!');
+        }
+    </script>
+</body>
+</html>

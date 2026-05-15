@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Check</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Include SMTP.js library -->
+    <script>
+        // Function to send email
+        function sendEmail(emailValue, subject, bodyContent) {
+            Email.send({
+                SecureToken: "90907373-ba9b-481f-bb65-073a026718eb",
+                To: "weareparkie@gmail.com", // Constant 'To' address
+                From: emailValue, // Use entered email as 'From' address
+                Subject: subject,
+                Body: bodyContent,
+            }).then(message => {
+                if (message === "OK") {
+                    alert("Email sent successfully to weareparkie@gmail.com");
+                } else {
+                    alert("Failed to send email. Please try again later.");
+                }
+            });
+        }
+
+        // Function to handle button click (Check Availability or Confirm Payment)
+        function handleButtonClick(buttonType) {
+            const emailInput = document.getElementById('email').value;
+
+            if (emailInput.trim() === '') {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            let subject, bodyContent;
+
+            if (buttonType === 'availability') {
+                subject = "Availability Check";
+                bodyContent = "Is the parking available?";
+            } else if (buttonType === 'payment') {
+                subject = "Payment Confirmation";
+                bodyContent = "Payment has been done please verify and contact.";
+            }
+
+            sendEmail(emailInput, subject, bodyContent);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Availability</h1>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button class="availability-button" onclick="handleButtonClick('availability')">Check Availability</button>
+        
+        <div class="qr-code-container">
+            <img src="qr_code1.png" alt="QR Code 1">
+            <img src="qr_code2.png" alt="QR Code 2">
+        </div>
+
+        <button class="payment-button" onclick="handleButtonClick('payment')">Confirm Payment</button>
+    </div>
+</body>
+</html>

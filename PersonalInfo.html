@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become our Member</title>
+    <link rel="stylesheet" href="AddParking.css">
+
+    <style>
+        /* Reset and base layout */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background image setup */
+        body {
+            background-image: url("PersonelinfoBG.jpg"); /* ensure correct path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* Centering the form */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Form container */
+        #main {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .center h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .text_field {
+            margin-bottom: 15px;
+        }
+
+        .text_field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #loggg {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #loggg:hover {
+            background-color: #0056b3;
+        }
+
+        #bak {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #bak:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="center">
+            <h1>Become our Member</h1>
+            <form id="mainForm">
+                <div class="text_field">
+                    <input type="text" id="Name" required placeholder="Name">
+                </div>
+                <div class="text_field">
+                    <input type="text" id="BookingStartTime" required placeholder="Booking start time">
+                </div>
+                <div class="text_field">
+                    <input type="text" id="BookingEndTime" required placeholder="Booking end time">
+                </div>
+                <div class="text_field">
+                    <input type="email" id="EmailId" required placeholder="Email Id">
+                </div>
+                <div class="text_field">
+                    <input type="tel" id="PhoneNo" required placeholder="Phone No">
+                </div>
+                <input type="submit" value="Sign-in" id="loggg">
+                <a href="deva.html" id="bak">Back</a>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAmwP09kE7xoibi0tJLvrDX-GEmx1JntN4",
+            authDomain: "parking-system-3bc50.firebaseapp.com",
+            databaseURL: "https://parking-system-3bc50-default-rtdb.firebaseio.com",
+            projectId: "parking-system-3bc50",
+            storageBucket: "parking-system-3bc50.appspot.com",
+            messagingSenderId: "671191659676",
+            appId: "1:671191659676:web:317e696c77e8f55f0fe959",
+            measurementId: "G-276RVTDFB9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const mainDB = ref(database, 'main');
+
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const Name = form.Name.value;
+            const BookingStartTime = form.BookingStartTime.value;
+            const BookingEndTime = form.BookingEndTime.value;
+            const EmailId = form.EmailId.value;
+            const PhoneNo = form.PhoneNo.value;
+
+            saveMessages(Name, BookingStartTime, BookingEndTime, EmailId, PhoneNo);
+        });
+
+        function saveMessages(Name, BookingStartTime, BookingEndTime, EmailId, PhoneNo) {
+            const main = push(mainDB);
+
+            set(main, {
+                "Name": Name,
+                "Booking start time": BookingStartTime,
+                "Booking end time": BookingEndTime,
+                "Email Id": EmailId,
+                "Phone no": PhoneNo,
+                "Date_of_booking": new Date().toISOString()
+            }).then(() => {
+                window.location.href = "emailotp.html";
+            }).catch((error) => {
+                console.error('Error saving data:', error);
+            });
+        }
+    </script>
+</body>
+</html>

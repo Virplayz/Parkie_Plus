@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ParkingFinder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+nav{
+    height: 12vh;
+    width: 100%;
+    background-color: whitesmoke;
+    filter: blur(px);
+    filter: drop-shadow(18px 18px 12px );
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    z-index: 999;
+}
+
+#parkie{
+    font-weight: 100;
+    color: rgb(61, 141, 173);
+    font-size: 30px;
+    margin-left: 50px;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    list-style: none;
+    
+}
+#nav-part2 h4 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    padding: 10px 20px;
+    font-size: 18px;
+   
+}
+#space{
+  height: 50vh;
+  width: 100vw;
+  background-image: url("about_2.0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#about{
+  transform: translate(498px,60px);
+  font-weight: 400;
+  font-size: 50px;
+ 
+
+}
+header {
+  margin-top: 20vh;
+  background-color: #5797ad;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+#company-info {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#company-info h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#company-info p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#features {
+  background-image: url("feat_2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#features h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  width: calc(33.33% - 40px);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  color: goldenrod;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#team {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#team h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member {
+  width: calc(25% - 40px);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.member:hover {
+  transform: scale(1.05);
+}
+
+.member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.member h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.member p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+</style>
+<body>
+  <nav>
+    <h1 id="parkie">PARKIE</h1>
+
+    <div id="nav-part2">
+        <h4><a href="">Home</a></h4>
+        <h4><a href="">Contact Us </a></h4>
+        <h4><a href="">About Us</a></h4>
+        <h4><a href="">Add Parking</a></h4>
+    </div>
+</nav>
+  <!-- <header>
+    <h1>About Us</h1>
+    <nav>
+      <ul>
+        <li><a href="#company-info">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header> -->
+  <div id="space">
+    <h1 id="about">About Us</h1>
+  </div>
+
+  <section id="company-info">
+    <h2 class="company-heading">Parking </h2>
+    <p>Welcome to ParkingFinder, your ultimate destination for finding and booking parking spots hassle-free!</p>
+    <p>We aim to revolutionize the parking industry by providing a convenient platform for both drivers and parking spot owners.</p>
+  </section>
+
+  <section id="features">
+    <h2 class="features-heading">Key Features</h2>
+    <div class="features-container">
+      <div class="feature">
+        <h3>Real-time Spot Availability</h3>
+        <p>Find available parking spots in real-time, saving you time and frustration.</p>
+      </div>
+      <div class="feature">
+        <h3>Booking Convenience</h3>
+        <p>Book your parking spot in advance to ensure availability upon arrival.</p>
+      </div>
+      <div class="feature">
+        <h3>User-Friendly Interface</h3>
+        <p>Our platform offers a seamless and intuitive experience for users of all levels.</p>
+      </div>
+    </div>
+    <!-- Add more features as needed -->
+  </section>
+
+  <section id="team">
+    <h2 class="team-heading">Our Team</h2>
+    <div class="team-container">
+      <div class="member">
+        <h3>Viraj</h3>
+        <p>UI/UX Designer and Front-End Development</p>
+      </div>
+      <div class="member">
+        <h3>Tejas</h3>
+        <p>UI/UX Designer and Back-End Development</p>
+      </div>
+      <div class="member">
+        <h3>Devesh</h3>
+        <p>Research and Development</p>
+      </div>
+      <div class="member">
+        <h3>Nishant</h3>
+        <p>Research and Development</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="background">
+        <h1 id="footer-tit">PARKIE</h1>
+        <h2 id="contact">Contact Us :- weareparkie@gmail.com</h2>
+        <p id="copy">&copy; 2024 ParkingFinder. All rights reserved.</p>
+        <div id="navi">
+        <h2 id="quick">Quick Navigations</h2>
+        <a href="home.html" id="home" class="an">Home</a>
+        <a href="" id="about" class="an">About Us</a>
+        <a href="" id="add" class="an">Add Parking</a>
+    </div>
+</div>
+
+    
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

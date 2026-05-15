@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Authentication</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .container {
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+input[type="text"], button {
+  padding: 10px;
+  margin: 5px;
+}
+
+.alertBox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.alertContent {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+</style>
+<body>
+<div class="container">
+  <h2>OTP Authentication</h2>
+  <form id="otpForm">
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Alert Dialog -->
+<div id="alertBox" class="alertBox">
+  <div class="alertContent">
+    <span class="close">&times;</span>
+    <p>OTP Valid! Redirecting...</p>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

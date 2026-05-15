@@ -1,0 +1,131 @@
+nav {
+  height: 12vh;
+  width: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* proper shadow */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0 40px;
+}
+
+#parkie {
+  font-weight: 100;
+  color: rgb(61, 141, 173);
+  font-size: 30px;
+}
+
+#nav-part2 {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  list-style: none;
+}
+
+#nav-part2 h4 a {
+  text-decoration: none;
+  color: black;
+  font-weight: 100;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+#pay {
+  font-weight: 100;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 140px; /* space below nav */
+}
+
+/* Flex container for boxes */
+#inner {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.box {
+  height: 35vh;
+  width: 22vw;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.box img {
+  height: 35vh;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.detail {
+  height: 20vh;
+  width: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.rupees {
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.rate {
+  font-weight: 300;
+  text-align: center;
+  font-size: 50px;
+  margin-top: -10px;
+}
+
+footer {
+  height: 25vh;
+  width: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.an {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  line-height: 1.5;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.an a {
+  text-decoration: none;
+  color: black;
+}
+
+#footer-tit {
+  font-weight: 100;
+  color: skyblue;
+  font-size: 50px;
+}
+
+#contact {
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+#quick {
+  font-weight: 100;
+  font-size: 38px;
+  margin-top: 20px;
+}

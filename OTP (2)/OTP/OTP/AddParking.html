@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="AddParking.css">
+</head>
+<body>
+    <div id="main">
+        <div class="center">
+            <h1>Become our Member</h1>
+            <form method="post" id="mainForm">
+                <div class="text_field">
+                    <input type="text" id="parkingName" required placeholder="Parking Name">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="text" id="location" required placeholder="Location">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="number" id="ticketPrice" required placeholder="Ticket Price">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="text" id="pinCodeAddress" required placeholder="Pin Code Address">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="text" id="yourName" required placeholder="Your Name">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="email" id="email" required placeholder="Email Id">
+                    <span></span>
+                </div>
+                <div class="text_field">
+                    <input type="tel" id="phoneNo" required placeholder="Phone No">
+                    <span></span>
+                </div>
+                <input type="submit" value="Sign-in" id="loggg">
+                <a href="deva.html" id="bak">Back</a>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        const firebaseConfig = {
+
+apiKey: "AIzaSyAmwP09kE7xoibi0tJLvrDX-GEmx1JntN4",
+
+authDomain: "parking-system-3bc50.firebaseapp.com",
+
+databaseURL: "https://parking-system-3bc50-default-rtdb.firebaseio.com",
+
+projectId: "parking-system-3bc50",
+
+storageBucket: "parking-system-3bc50.appspot.com",
+
+messagingSenderId: "671191659676",
+
+appId: "1:671191659676:web:317e696c77e8f55f0fe959",
+
+measurementId: "G-276RVTDFB9"
+
+};
+
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const mainDB = ref(database, 'main');
+
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+            const form = e.target;
+            const parkingName = form.parkingName.value;
+            const location = form.location.value;
+            const ticketPrice = form.ticketPrice.value;
+            const pinCodeAddress = form.pinCodeAddress.value;
+            const yourName = form.yourName.value;
+            const email = form.email.value;
+            const phoneNo = form.phoneNo.value;
+
+            console.log('Values before saving:', parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo);
+
+            // Save form data to Firebase
+            saveMessages(parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo);
+        });
+
+        function saveMessages(parkingName, location, ticketPrice, pinCodeAddress, yourName, email, phoneNo) {
+            const main = push(mainDB); // Create a new unique key under 'main'
+
+            set(main, {
+                Parking_Name: parkingName,
+                Location: location,
+                Ticket_Price: ticketPrice,
+                Pin_Code_Address: pinCodeAddress,
+                Name: yourName,
+                Email_address: email,
+                Phone_no: phoneNo,
+                Date_of_booking: new Date().toISOString() // Current date/time
+            }).then(() => {
+                // Data saved successfully, now redirect to OTP verification page
+                window.location.href = "emailotp.html";
+            }).catch((error) => {
+                console.error('Error saving data:', error);
+                // Handle error if data saving fails
+            });
+        }
+    </script>
+</body>
+</html>
